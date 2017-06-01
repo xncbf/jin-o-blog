@@ -10,5 +10,4 @@ __pycache__
 MANIFEST
 .idea/
 db.sqlite3
-/static/
 /log
