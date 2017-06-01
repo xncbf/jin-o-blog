@@ -7,4 +7,4 @@ class Index(View):
     template_name = 'index.html'
 
     def get(self, *args, **kwargs):
-        render(self.request, self.template_name)
+        return render(self.request, self.template_name)

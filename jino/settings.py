@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).ancestor(2)
 SECRET_KEY = 'x#_4+y9m^&*tpo@#4gb+-vzo3aa9f2*t1v=_5!dse-9y(y$9ge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'jino.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR.child('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,4 +105,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.child('static')
 
 MEDIA_URL = '/images/'
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = BASE_DIR.child('images')
