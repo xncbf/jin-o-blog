@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'jino.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['AUTHOME_DATABASE_NAME'],
+        'USER': os.environ['AUTHOME_DATABASE_USER'],
+        'PASSWORD': os.environ['AUTHOME_DATABASE_PASSWORD'],
+        'HOST': os.environ['AUTHOME_DATABASE_HOST'],
+        'PORT': os.environ['AUTHOME_DATABASE_PORT'],
     }
 }
 
