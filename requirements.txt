@@ -3,3 +3,4 @@ Unipath
 Pillow
 sorl-thumbnail
 django-storages
+boto
