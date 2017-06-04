@@ -2,3 +2,4 @@ django==1.8.18
 Unipath
 Pillow
 sorl-thumbnail
+django-storages

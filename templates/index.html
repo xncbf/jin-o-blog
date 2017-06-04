@@ -9,20 +9,20 @@
                 <h1>진오시선</h1>
                 <p>Just another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                    <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                    <li><a href="https://www.facebook.com/fpemncnlror" class="icon fa-facebook-official"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://instagram.com/photo_jino" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="http://blog.naver.com/xncbg1" class="icon fa-television"><span class="label">Blog</span></a></li>
+                    <li><a href="mailto:xncbg1@naver.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
                 </ul>
             </header>
 
         <!-- Thumbnail -->
             <section id="thumbnails">
-                {% for e in "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" %}
+                {% for image in images %}
                 <article>
-                    <a class="thumbnail" href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" /></a>
-                    <h2>Vivamus convallis libero</h2>
-                    <p>Sed velit lacus, laoreet at venenatis convallis in lorem tincidunt.</p>
+                    <a class="thumbnail" href="{{ MEDIA_URL }}{{ image.image }}"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="" /></a>
+                    <h2>{{ image.title }}</h2>
+                    <p>{{ image.detail }}</p>
                 </article>
                 {% endfor %}
             </section>

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).ancestor(2)
 SECRET_KEY = os.environ['JINO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
+    'storages',
     'app',
 )
 
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
             ],
         },
     },
@@ -105,9 +108,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.child('static')
 
-MEDIA_URL = '/images/'
-MEDIA_ROOT = BASE_DIR.child('images')
-
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']  # access key
@@ -116,3 +116,6 @@ AWS_REGION = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'jin-o'
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_REGION
+
+MEDIA_URL = "http://" + AWS_S3_HOST + "/" + AWS_STORAGE_BUCKET_NAME + "/"
+MEDIA_ROOT = BASE_DIR.child('images')
