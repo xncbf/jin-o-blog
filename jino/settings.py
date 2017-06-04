@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).ancestor(2)
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x#_4+y9m^&*tpo@#4gb+-vzo3aa9f2*t1v=_5!dse-9y(y$9ge'
+SECRET_KEY = os.environ['JINO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -107,3 +107,12 @@ STATIC_ROOT = BASE_DIR.child('static')
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR.child('images')
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']  # access key
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']  # secret access key
+AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'jin-o'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_REGION
