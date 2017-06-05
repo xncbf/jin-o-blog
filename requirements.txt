@@ -4,3 +4,4 @@ Pillow
 sorl-thumbnail
 django-storages
 boto
+psycopg2
