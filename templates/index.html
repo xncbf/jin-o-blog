@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 {% load static %}
 {% block contents %}
 <!-- Main -->
@@ -20,7 +21,7 @@
             <section id="thumbnails">
                 {% for image in images %}
                 <article>
-                    <a class="thumbnail" href="{{ MEDIA_URL }}{{ image.image }}"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="" /></a>
+                    <a class="thumbnail" href="{{ image.resized_image }}"><img src="{{ image.resized_image }}" alt="" /></a>
                     <h2>{{ image.title }}</h2>
                     <p>{{ image.detail }}</p>
                 </article>
@@ -33,6 +34,7 @@
                     <li>&copy; 2017.</li><li>Created by <a href="https://github.com/xncbf/jin-o-blog">김준환</a></li>
                 </ul>
             </footer>
+
 
     </div>
 {% endblock %}

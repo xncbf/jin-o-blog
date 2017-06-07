@@ -9,5 +9,5 @@ class Index(View):
 
     def get(self, *args, **kwargs):
         context = {}
-        context['images'] = ImageInfo.objects.all()
+        context['images'] = ImageInfo.objects.all().order_by('-id')
         return render(self.request, self.template_name, context=context)
