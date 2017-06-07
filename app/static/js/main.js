@@ -760,11 +760,14 @@ var main = (function($) { var _ = {
 	 */
 	toggle: function() {
 
-		if (_.$body.hasClass('fullscreen'))
+		if (_.$body.hasClass('fullscreen')){
 			_.show();
-		else
+			$(".caption").show();
+		}
+		else{
 			_.hide();
-
+			$(".caption").hide();
+		}
 	},
 
 }; return _; })(jQuery); main.init();
