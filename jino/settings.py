@@ -84,10 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ['JINO_DATABASE_NAME'],
-        'USER': os.environ['AUTHOME_DATABASE_USER'],
-        'PASSWORD': os.environ['AUTHOME_DATABASE_PASSWORD'],
-        'HOST': os.environ['AUTHOME_DATABASE_HOST'],
-        'PORT': os.environ['AUTHOME_DATABASE_PORT'],
+        'USER': os.environ['JINO_DATABASE_USER'],
+        'PASSWORD': os.environ['JINO_DATABASE_PASSWORD'],
+        'HOST': os.environ['JINO_DATABASE_HOST'],
+        'PORT': os.environ['JINO_DATABASE_PORT'],
     }
 }
 
