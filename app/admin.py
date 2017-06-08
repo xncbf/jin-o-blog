@@ -4,7 +4,7 @@ from .models import ImageInfo
 
 # Register your models here.
 class ImageInfoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'detail', 'origin_image', 'thumbnail_image')
+    list_display = ('title', 'detail', 'origin_image')
     search_fields = ('title', 'detail', 'origin_image')
 
 admin.site.register(ImageInfo, ImageInfoAdmin)

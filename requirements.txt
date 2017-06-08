@@ -1,7 +1,7 @@
 django==1.8.18
 Unipath
 Pillow
-sorl-thumbnail
+django-imagekit
 django-storages
 boto
 psycopg2

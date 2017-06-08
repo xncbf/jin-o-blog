@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sorl.thumbnail',
+    'imagekit',
     'storages',
     'app',
 )
@@ -120,6 +120,8 @@ AWS_REGION = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'jin-o'
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_REGION
+IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'imagekit.imagecache.NonValidatingImageCacheBackend'
+
 
 MEDIA_URL = "http://" + AWS_S3_HOST + "/" + AWS_STORAGE_BUCKET_NAME + "/"
 MEDIA_ROOT = BASE_DIR.child('images')

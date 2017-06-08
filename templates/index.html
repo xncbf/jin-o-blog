@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load thumbnail %}
 {% load static %}
 {% block contents %}
 <!-- Main -->
@@ -21,7 +20,7 @@
             <section id="thumbnails">
                 {% for image in images %}
                 <article>
-                    <a class="thumbnail" href="{{ image.resized_image }}"><img src="{{ image.resized_image }}" alt="" /></a>
+                    <a class="thumbnail" href="{{ image.resized_image.url }}"><img src="{{ image.thumbnail_image.url }}" alt="{{ image.title }}" /></a>
                     <h2>{{ image.title }}</h2>
                     <p>{{ image.detail }}</p>
                 </article>
