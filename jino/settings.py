@@ -114,8 +114,8 @@ STATIC_ROOT = BASE_DIR.child('static')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']  # access key
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']  # secret access key
+AWS_ACCESS_KEY_ID = os.environ['JINO_AWS_ACCESS_KEY_ID']  # access key
+AWS_SECRET_ACCESS_KEY = os.environ['JINO_AWS_SECRET_ACCESS_KEY']  # secret access key
 AWS_REGION = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'jin-o'
 AWS_QUERYSTRING_AUTH = False
