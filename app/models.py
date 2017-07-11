@@ -1,6 +1,6 @@
 from django.db import models
 from imagekit.models import ProcessedImageField, ImageSpecField
-from imagekit.processors import ResizeToFill
+from imagekit.processors import ResizeToFill, ResizeToFit, SmartResize
 
 
 # Create your models here.
@@ -8,12 +8,12 @@ class ImageInfo(models.Model):
     origin_image = models.ImageField('원본이미지')
     # resized_image = models.ImageField('리사이징', editable=False)
     resized_image = ImageSpecField(source='origin_image',
-                                    processors=[ResizeToFill(1920, 1281)],
-                                    options={'quality': 100},)
+                                   processors=[ResizeToFit(1920, 1281, mat_color=(255, 255, 255))],
+                                   options={'quality': 100},)
     # thumbnail_image = models.ImageField('썸네일', editable=False)
     thumbnail_image = ImageSpecField(source='origin_image',
-                                      processors=[ResizeToFill(215, 143)],
-                                      options={'quality': 95},)
+                                     processors=[ResizeToFit(215, 143, mat_color=(255, 255, 255))],
+                                     options={'quality': 95},)
     title = models.CharField('제목', max_length=500)
     detail = models.CharField('내용', max_length=500, blank=True)
 
