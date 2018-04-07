@@ -11,3 +11,4 @@ MANIFEST
 .idea/
 db.sqlite3
 /log
+/venv

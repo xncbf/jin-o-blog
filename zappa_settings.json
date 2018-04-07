@@ -1,0 +1,12 @@
+{
+    "prod": {
+        "aws_region": "ap-northeast-2",
+        "django_settings": "jino.settings",
+        "profile_name": "zappa",
+        "project_name": "jin-o-blog",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-0zfuevx3t",
+        "domain": "jin-o.me",
+        "memory_size": 1024
+    }
+}
