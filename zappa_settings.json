@@ -7,6 +7,7 @@
         "runtime": "python3.6",
         "s3_bucket": "zappa-0zfuevx3t",
         "domain": "jin-o.me",
+        "certificate_arn": "arn:aws:acm:us-east-1:494890851710:certificate/a6aa9d8d-2694-45b7-93f5-28dfdb698342",
         "memory_size": 1024
     }
 }

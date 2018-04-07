@@ -118,14 +118,15 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_ACCESS_KEY_ID = os.environ['JINO_AWS_ACCESS_KEY_ID']  # access key
 AWS_SECRET_ACCESS_KEY = os.environ['JINO_AWS_SECRET_ACCESS_KEY']  # secret access key
-AWS_REGION = 'ap-northeast-2'
+
 AWS_STORAGE_BUCKET_NAME = 'jin-o'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
 AWS_QUERYSTRING_AUTH = False
-AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_REGION
+
 IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'imagekit.imagecache.NonValidatingImageCacheBackend'
 
-
+AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_S3_REGION_NAME
 MEDIA_URL = "http://" + AWS_S3_HOST + "/" + AWS_STORAGE_BUCKET_NAME + "/"
 MEDIA_ROOT = BASE_DIR.child('images')
